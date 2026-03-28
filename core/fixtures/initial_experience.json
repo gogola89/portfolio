@@ -1,0 +1,44 @@
+[
+  {
+    "model": "core.experience",
+    "pk": 1,
+    "fields": {
+      "company": "8teq Solutions",
+      "role": "Lead Backend Engineer",
+      "start_date": "2021-01-01",
+      "end_date": null,
+      "is_current": true,
+      "description": "Leading the migration of legacy monoliths to microservices. Optimized CI/CD pipelines reducing deployment time by 60%. Architecting scalable backend systems serving 100K+ daily requests.",
+      "technologies": "Django, Docker, Kubernetes, AWS, PostgreSQL, Redis",
+      "order": 1
+    }
+  },
+  {
+    "model": "core.experience",
+    "pk": 2,
+    "fields": {
+      "company": "E-kraal Innovation Hub",
+      "role": "Senior Cloud Architect",
+      "start_date": "2018-01-01",
+      "end_date": "2020-12-31",
+      "is_current": false,
+      "description": "Designed hybrid-cloud security frameworks for public sector clients. Orchestrated container workloads across multiple regions. Implemented infrastructure as code practices.",
+      "technologies": "AWS, Terraform, Docker, Python, Ansible",
+      "order": 2
+    }
+  },
+  {
+    "model": "core.experience",
+    "pk": 3,
+    "fields": {
+      "company": "Linux Solutions",
+      "role": "DevOps Specialist",
+      "start_date": "2015-01-01",
+      "end_date": "2017-12-31",
+      "is_current": false,
+      "description": "Managing large-scale on-prem server farms. Specialized in high-availability configuration for critical database systems. Automated deployment processes.",
+      "technologies": "Linux, Bash, Nagios, MySQL, Apache",
+      "order": 3
+    }
+  }
+]

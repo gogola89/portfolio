@@ -1,0 +1,122 @@
+[
+  {
+    "model": "core.skill",
+    "pk": 1,
+    "fields": {
+      "name": "Python",
+      "category": "backend",
+      "proficiency": 95,
+      "icon": "code",
+      "order": 1,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 2,
+    "fields": {
+      "name": "Django/FastAPI",
+      "category": "backend",
+      "proficiency": 90,
+      "icon": "api",
+      "order": 2,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 3,
+    "fields": {
+      "name": "Docker",
+      "category": "devops",
+      "proficiency": 90,
+      "icon": "docker",
+      "order": 1,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 4,
+    "fields": {
+      "name": "Kubernetes",
+      "category": "devops",
+      "proficiency": 85,
+      "icon": "cloud",
+      "order": 2,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 5,
+    "fields": {
+      "name": "AWS",
+      "category": "devops",
+      "proficiency": 85,
+      "icon": "cloud_queue",
+      "order": 3,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 6,
+    "fields": {
+      "name": "PostgreSQL",
+      "category": "database",
+      "proficiency": 90,
+      "icon": "storage",
+      "order": 1,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 7,
+    "fields": {
+      "name": "Redis",
+      "category": "database",
+      "proficiency": 85,
+      "icon": "memory",
+      "order": 2,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 8,
+    "fields": {
+      "name": "MongoDB",
+      "category": "database",
+      "proficiency": 80,
+      "icon": "dataset",
+      "order": 3,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 9,
+    "fields": {
+      "name": "Terraform",
+      "category": "devops",
+      "proficiency": 80,
+      "icon": "build",
+      "order": 4,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "core.skill",
+    "pk": 10,
+    "fields": {
+      "name": "Go",
+      "category": "backend",
+      "proficiency": 75,
+      "icon": "terminal",
+      "order": 3,
+      "is_featured": true
+    }
+  }
+]

@@ -1,0 +1,115 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{ project.title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<!-- Navigation (same as home) -->
+<nav class="fixed top-0 w-full z-50 bg-[#0d112a]/80 backdrop-blur-md border-b border-[#3c494d]/15">
+    <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-16">
+        <a href="{% url 'core:home' %}" class="text-xl font-black text-[#00d9ff] tracking-tighter font-headline">
+            ARCHITECT_v1.0
+        </a>
+        <div class="hidden md:flex space-x-8 font-headline tracking-tight text-sm uppercase font-bold">
+            <a class="text-slate-400 hover:text-[#00d9ff] transition-colors" href="{% url 'core:home' %}#expertise">Expertise</a>
+            <a class="text-slate-400 hover:text-[#00d9ff] transition-colors" href="{% url 'core:home' %}#experience">Experience</a>
+            <a class="text-slate-400 hover:text-[#00d9ff] transition-colors" href="{% url 'core:home' %}#projects">Projects</a>
+            <a class="text-slate-400 hover:text-[#00d9ff] transition-colors" href="{% url 'core:home' %}#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main class="relative pt-32 pb-24 px-8">
+    <div class="max-w-5xl mx-auto">
+        <!-- Back Button -->
+        <a href="{% url 'core:home' %}#projects" class="inline-flex items-center text-primary font-label text-xs tracking-widest uppercase mb-8 hover:underline">
+            <span class="material-symbols-outlined mr-2 text-sm">arrow_back</span>
+            Back to Projects
+        </a>
+        
+        <!-- Project Header -->
+        <div class="mb-12">
+            <span class="bg-primary/20 text-primary px-3 py-1 text-[10px] font-label uppercase rounded-full">{{ project.category }}</span>
+            <h1 class="font-headline text-5xl md:text-6xl font-bold mt-6 mb-6">{{ project.title }}</h1>
+            <p class="text-xl text-on-surface-variant leading-relaxed">{{ project.short_description }}</p>
+        </div>
+        
+        <!-- Project Image -->
+        {% if project.image %}
+        <div class="aspect-video w-full bg-surface-container overflow-hidden border border-outline-variant/10 rounded-sm mb-12">
+            <img class="w-full h-full object-cover" src="{{ project.image.url }}" alt="{{ project.title }}"/>
+        </div>
+        {% endif %}
+        
+        <!-- Project Details Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="glass-card p-8 border border-outline-variant/10 rounded-sm mb-8">
+                    <h2 class="font-headline text-2xl font-bold mb-6 uppercase">Overview</h2>
+                    <p class="text-on-surface-variant leading-relaxed whitespace-pre-line">{{ project.description }}</p>
+                </div>
+                
+                {% if project.metrics %}
+                <div class="glass-card p-8 border border-outline-variant/10 rounded-sm">
+                    <h2 class="font-headline text-2xl font-bold mb-6 uppercase">Key Metrics</h2>
+                    <ul class="space-y-4">
+                        {% for metric in project.get_metrics_list %}
+                        <li class="flex items-start">
+                            <span class="material-symbols-outlined text-secondary mr-4 text-xl">check_circle</span>
+                            <span class="text-on-surface-variant">{{ metric }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="glass-card p-8 border border-outline-variant/10 rounded-sm sticky top-24">
+                    <h3 class="font-headline text-lg font-bold mb-6 uppercase">Tech Stack</h3>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        {% for tech in project.get_technologies_list %}
+                        <span class="bg-surface-container-high px-3 py-1 text-[10px] font-label rounded-sm text-primary">{{ tech|upper }}</span>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="space-y-4">
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="flex items-center justify-between p-4 bg-surface-container-high rounded-sm hover:bg-surface-container transition-colors group">
+                            <span class="font-label text-xs uppercase tracking-widest">Source Code</span>
+                            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">open_in_new</span>
+                        </a>
+                        {% endif %}
+                        
+                        {% if project.live_url %}
+                        <a href="{{ project.live_url }}" target="_blank" rel="noopener" class="flex items-center justify-between p-4 bg-surface-container-high rounded-sm hover:bg-surface-container transition-colors group">
+                            <span class="font-label text-xs uppercase tracking-widest">Live Demo</span>
+                            <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">open_in_new</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#3c494d]/15 bg-[#0d112a]">
+    <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto space-y-8 md:space-y-0">
+        <div class="text-[#00d9ff] font-bold font-headline uppercase tracking-tighter">
+            G.OGOLA // ARCHITECT
+        </div>
+        <div class="font-label text-[10px] uppercase tracking-widest text-slate-500 text-center">
+            © {% now "Y" %} System Architect // Built with Organic Functionalism
+        </div>
+        <div class="flex space-x-8 font-label text-[10px] uppercase tracking-widest">
+            <a class="text-slate-500 hover:text-[#4edea3] transition-colors" href="{{ site_settings.github_url|default:"#" }}" target="_blank" rel="noopener">GitHub</a>
+            <a class="text-slate-500 hover:text-[#4edea3] transition-colors" href="{{ site_settings.linkedin_url|default:"#" }}" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="text-slate-500 hover:text-[#4edea3] transition-colors" href="{% url 'core:home' %}#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,36 @@
+[
+  {
+    "model": "core.project",
+    "pk": 1,
+    "fields": {
+      "title": "Enterprise Video Analytics Platform",
+      "slug": "enterprise-video-analytics",
+      "short_description": "A real-time edge-computing platform processing 10k+ video streams. Implemented a custom queuing system that reduced latency by 45%.",
+      "description": "This enterprise-grade video analytics platform was designed to process thousands of concurrent video streams in real-time. The system uses a distributed architecture with edge computing nodes that perform initial processing before sending metadata to central servers.\n\nKey technical achievements:\n- Custom message queue implementation optimized for video frame data\n- Sub-200ms end-to-end processing latency\n- Auto-scaling based on stream count and processing load\n- Multi-region deployment for high availability\n\nThe platform supports facial recognition, license plate detection, and anomaly detection across all streams simultaneously.",
+      "category": "Systems Design",
+      "technologies": "FastAPI, Kubernetes, AWS, Redis, PostgreSQL, TensorFlow, OpenCV",
+      "metrics": "10K+ concurrent streams\n45% latency reduction\n99.9% uptime\nMulti-region deployment",
+      "is_featured": true,
+      "order": 1,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 2,
+    "fields": {
+      "title": "MLOps Deployment Engine",
+      "slug": "mlops-deployment-engine",
+      "short_description": "Automated deployment and monitoring for large language models. Built with Kubeflow and custom Prometheus exporters.",
+      "description": "An end-to-end MLOps platform that automates the journey from model training to production deployment. The system provides versioning, A/B testing, and automatic rollback capabilities.\n\nKey features:\n- Automated model validation and testing pipeline\n- Canary deployments with traffic splitting\n- Real-time performance monitoring and alerting\n- Model versioning and lineage tracking\n- Self-service deployment for data science team\n\nThe platform reduced model deployment time from weeks to hours while maintaining production stability.",
+      "category": "MLOps Pipeline",
+      "technologies": "Kubeflow, Docker, Jenkins, AWS Lambda, FastAPI, MLflow, Prometheus, Grafana",
+      "metrics": "Deployment time: weeks → hours\nAutomated rollback capability\nReal-time model monitoring\nSelf-service for DS team",
+      "is_featured": true,
+      "order": 2,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  }
+]
