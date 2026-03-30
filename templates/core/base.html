@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
+    {% load static %}
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>{% block title %}{{ site_settings.site_title|default:"GEORGE OGOLA // Architect v1.0" }}{% endblock %}</title>
+    <title>{% block title %}{{ site_settings.site_title|default:"GEORGE OGOLA // Architect" }}{% endblock %}</title>
     <meta name="description" content="{{ site_settings.site_tagline|default:"Senior Backend & DevOps Engineer - Python & Cloud Specialist" }}"/>
-    
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" sizes="any"/>
+    <link rel="icon" href="{% static 'favicon/favicon-32x32.png' %}" type="image/png" sizes="32x32"/>
+    <link rel="icon" href="{% static 'favicon/favicon-16x16.png' %}" type="image/png" sizes="16x16"/>
+    <link rel="apple-touch-icon" href="{% static 'favicon/apple-touch-icon.png' %}" sizes="180x180"/>
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}"/>
+
     <!-- Fonts - Using system fonts as fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

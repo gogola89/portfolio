@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ContactMessage',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('email', models.EmailField(max_length=254)),
                 ('message', models.TextField()),
@@ -31,7 +32,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CVDownload',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('email', models.EmailField(blank=True, max_length=254, null=True)),
                 ('ip_address', models.GenericIPAddressField(blank=True, null=True)),
                 ('user_agent', models.TextField(blank=True)),
@@ -44,14 +46,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Experience',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('company', models.CharField(max_length=255)),
                 ('role', models.CharField(max_length=255)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField(blank=True, null=True)),
                 ('is_current', models.BooleanField(default=False)),
                 ('description', models.TextField()),
-                ('technologies', models.TextField(help_text='Comma-separated list of technologies used')),
+                ('technologies', models.TextField(
+                    help_text='Comma-separated list of technologies used')),
                 ('order', models.IntegerField(default=0)),
             ],
             options={
@@ -61,15 +65,20 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Project',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255)),
                 ('slug', models.SlugField(unique=True)),
                 ('short_description', models.TextField()),
                 ('description', models.TextField()),
-                ('image', models.ImageField(blank=True, null=True, upload_to='projects/')),
-                ('category', models.CharField(default='Systems Design', max_length=100)),
-                ('technologies', models.TextField(help_text='Comma-separated list of technologies')),
-                ('metrics', models.TextField(blank=True, help_text='Key achievements/metrics (one per line)')),
+                ('image', models.ImageField(
+                    blank=True, null=True, upload_to='projects/')),
+                ('category', models.CharField(
+                    default='Systems Design', max_length=100)),
+                ('technologies', models.TextField(
+                    help_text='Comma-separated list of technologies')),
+                ('metrics', models.TextField(blank=True,
+                 help_text='Key achievements/metrics (one per line)')),
                 ('github_url', models.URLField(blank=True, null=True)),
                 ('live_url', models.URLField(blank=True, null=True)),
                 ('is_featured', models.BooleanField(default=True)),
@@ -84,14 +93,20 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SiteSettings',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('site_title', models.CharField(default='GEORGE OGOLA // Architect v1.0', max_length=255)),
-                ('site_tagline', models.CharField(default="Building scalable systems that don't break at 3 AM.", max_length=500)),
-                ('cv_file', models.FileField(help_text='Upload your CV file', upload_to='cv/')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('site_title', models.CharField(
+                    default='GEORGE OGOLA // Architect', max_length=255)),
+                ('site_tagline', models.CharField(
+                    default="Building scalable systems that don't break at 3 AM.", max_length=500)),
+                ('cv_file', models.FileField(
+                    help_text='Upload your CV file', upload_to='cv/')),
                 ('github_url', models.URLField(blank=True, null=True)),
                 ('linkedin_url', models.URLField(blank=True, null=True)),
-                ('email', models.EmailField(default='gogola89@gmail.com', max_length=254)),
-                ('location', models.CharField(default='Nairobi, Kenya', max_length=255)),
+                ('email', models.EmailField(
+                    default='gogola89@gmail.com', max_length=254)),
+                ('location', models.CharField(
+                    default='Nairobi, Kenya', max_length=255)),
             ],
             options={
                 'verbose_name': 'Site Settings',
@@ -101,11 +116,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Skill',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('category', models.CharField(choices=[('backend', 'Backend'), ('devops', 'DevOps & Cloud'), ('database', 'Database'), ('frontend', 'Frontend'), ('tools', 'Tools')], max_length=50)),
-                ('proficiency', models.IntegerField(default=80, help_text='Proficiency level (0-100)')),
-                ('icon', models.CharField(blank=True, help_text='Material Icons class name', max_length=50)),
+                ('category', models.CharField(choices=[('backend', 'Backend'), ('devops', 'DevOps & Cloud'), (
+                    'database', 'Database'), ('frontend', 'Frontend'), ('tools', 'Tools')], max_length=50)),
+                ('proficiency', models.IntegerField(
+                    default=80, help_text='Proficiency level (0-100)')),
+                ('icon', models.CharField(blank=True,
+                 help_text='Material Icons class name', max_length=50)),
                 ('order', models.IntegerField(default=0)),
                 ('is_featured', models.BooleanField(default=False)),
             ],
